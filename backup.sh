@@ -9,3 +9,9 @@ mysqldump -u root -p[mysqlpassword] --all-databases > /var/backups/alldb_backup.
 cp /etc/hosts /var/backups/
 
 #Backup importand files relate to app
+  cd /var/www/ 
+  cp openemr/sites/default/config.php /var/backups/
+  cp -R openemr/sites/default/documents   /var/backups/
+  cp -R openemr/sites/default/era  /var/backups/
+  cp -R openemr/sites/default/edi  /var/backups/
+  cp -R openemr/sites/default/letter_templates  /var/backups/
