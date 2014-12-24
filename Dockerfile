@@ -68,9 +68,7 @@ RUN chmod +x /sbin/pre-conf \
 
 #down/shutdown script ... use to be run in container before stop or shutdown .to keep service..good status..and maybe
 #backup or keep data integrity ..
-##scritp that can be running from the outside using docker-bash tool ...
-## for example to create backup for database with convitation of VOLUME dockers-bash container_ID backup_mysql
-
+##scritp that can be running from the outside using docker exec tool ...
 COPY backup.sh /sbin/backup
 RUN chmod +x /sbin/backup
 VOLUME /var/backups
@@ -81,14 +79,7 @@ VOLUME /var/backups
 COPY after_install.sh /sbin/after_install
 RUN chmod +x /sbin/after_install
 
-#additionsl tools to be use internally
-# to allow access from outside of the container to the container service
-# at that ports need to allow access from firewall if need to access it outside of the server.
-
 EXPOSE 443
-
-#creatian of volume
-#VOLUME
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
