@@ -12,6 +12,26 @@ ENV HOME /root
 RUN apt-get update && apt-get install -y -q apache2 \
                                             mysql-server \
                                             php5 \
+                                            apache2-mpm-prefork \
+                                            libapache2-mod-php5 \
+                                            libdate-calc-perl \
+                                            libdbd-mysql-perl \
+                                            libhtml-parser-perl \
+                                            libtiff-tools \
+                                            libwww-mechanize-perl \
+                                            libxml-parser-perl \
+                                            libtiff-tools \
+                                            libwww-mechanize-perl \
+                                            libxml-parser-perl \
+                                            php5-mysql \
+                                            php5-cli \
+                                            php5-gd \
+                                            php5-xsl \
+                                            php5-curl \
+                                            php5-mcrypt \
+                                            php-soap \
+                                            imagemagick \
+                                            php5-json \
                                       && apt-get clean \
                                       && rm -rf /tmp/* /var/tmp/* \
                                       && rm -rf /var/lib/apt/lists/*
