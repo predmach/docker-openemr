@@ -37,6 +37,7 @@ RUN apt-get update && apt-get install -y -q apache2 \
 #General variable definition....
 ##startup scripts
 COPY php.ini /etc/php5/apache2/php.ini
+COPY apache2.conf /etc/apache2/apache2.conf
 
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't
 #run it again ... use for conf for service ... when run the first time ...
