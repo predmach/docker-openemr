@@ -21,8 +21,6 @@ RUN apt-get update && apt-get install -y -q apache2 \
                                             libwww-mechanize-perl \
                                             libxml-parser-perl \
                                             libtiff-tools \
-                                            libwww-mechanize-perl \
-                                            libxml-parser-perl \
                                             php5-mysql \
                                             php5-cli \
                                             php5-gd \
