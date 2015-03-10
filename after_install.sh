@@ -1,5 +1,4 @@
 #!/bin/bash
-#need to be added after_install scritp to get password of default user koha_library
 
 cd /var/www
     chmod 644 openemr/library/sqlconf.php 
