@@ -45,9 +45,9 @@ Where you need to fallow this steps :
 
    - Press continue.
 
- - Open EMR Setup step 3 to 6 : press continue.
+- Open EMR Setup step 3 to 6 : press continue.
 
- - Open EMR Setup step congratualtion page : press continue.
+- Open EMR Setup step congratualtion page : press continue.
 
 After the web installation need to run this command to increase security :
 
