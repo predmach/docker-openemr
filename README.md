@@ -29,7 +29,7 @@ Where you need to fallow this steps :
 
   - Open EMR Setup : press next.
 
-  - Open EMR Setup step 1 : press continue "option suppose to be "Have setup create the database"".
+  - Open EMR Setup step 1 : press continue (option suppose to be "Have setup create the database").
 
   - Open EMR Setup step 2 : 
 
@@ -41,7 +41,7 @@ Where you need to fallow this steps :
  
   OPENEMR USER:
 
-   - Initial User Password: need to entry a new passowrd for admin user ..(remember it needed to log in)
+   - Initial User Password: need to entry a new passowrd for admin user(remember it needed to log in).
 
    - Press continue.
 
