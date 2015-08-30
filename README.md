@@ -45,19 +45,18 @@ Where you need to fallow this steps :
   - Open EMR Setup step 2 : 
 
    MYSQL SERVER: 
-   - Server Host ==> db  (this is relate to link container _some-mysql:db_)
-   - Database Name ==> openemr
-   - Login Name ==> openemruser
-   - PASSWORD ==> opendbpasswd or the one you are using when database was create ...
-     .......
-   - Root Pass:  ==> nothing there. 
-   - User Hostname ==> localhost
-     .......
+    - Server Host ==> db  (this is relate to link container _some-mysql:db_)
+    - Database Name ==> openemr
+    - Login Name ==> openemruser
+    - PASSWORD ==> opendbpasswd or the one you are using when database was create ...
+    - ........
+    - Root Pass:  ==> nothing there. 
+    - User Hostname ==> localhost
+    - .......
  
   OPENEMR USER:
 
    - Initial User Password: need to entry a new passowrd for admin user(remember it needed to log in).
-
    - Press _continue_.
 
 - Open EMR Setup step 3 to 6 : press continue.
