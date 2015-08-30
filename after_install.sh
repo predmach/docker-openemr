@@ -9,8 +9,5 @@ cd /var/www
     chmod 600 openemr/sql_upgrade.php 
     chmod 600 openemr/gacl/setup.php 
     chmod 600 openemr/ippf_upgrade.php
-    
-     #security tweak
-    mysqladmin -u root password mysqlpsswd
-    mysqladmin -u root -pmysqlpsswd reload
+  
     
