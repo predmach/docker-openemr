@@ -11,43 +11,57 @@ Docker container for [OpenEMR 4.2.0][3]
 To install docker in Ubuntu 14.04 use the commands:
 
     $ sudo apt-get update
-    $ sudo apt-get install docker.io
+    $ wget -qO- https://get.docker.com/ | sh
 
  To install docker in other operating systems check [docker online documentation][4]
 
 ## Usage
 
-To run container use the command below:
+If you need a MySQL database you can link container :
 
-    $ docker run -d -p 443 quantumobject/docker-openemr
+    $ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword  -e MYSQL_DATABASE=openemr \
+    -e MYSQL_USER=openemruser -e MYSQL_PASSWORD=openemrdbpasswd -d mysql
+    
+In case you want to used pre-existing mysql container , you can add the new database by connecting to it with docker exec -it some-mysql bash and manual adding _openemr_ database or you can link and used _quantumobject/docker-mywebsql_ to create database _openemr_ and user _openemruser_ plus need to grant all permision of this user to the _openemr_ database.
+
+Them create, run and link to the OpenEMR container:
+
+    $ docker run -d -p 443 --link some-mysql:db quantumobject/docker-openemr
+
+where when been ask for database need to replace localhost for db.
 
 ## Web install procedure :
 
-Check with your browser to the assigned port by docker for port 443 to  continue web installation.
+Check with your browser to the assigned xxxx port by docker or you for port 443 to  continue web installation.
+
+  - **https://host_ip:port/**
 
 Where you need to fallow this steps :
 
-  - Open EMR Setup : press next.
+  - Open EMR Setup : press _continue_.
 
-  - Open EMR Setup step 1 : press continue (option suppose to be "Have setup create the database").
+  - Open EMR Setup step 1 : option suppose to be "I have already created the database" and press _continue_.
 
   - Open EMR Setup step 2 : 
 
    MYSQL SERVER: 
-
-   - PASSWORD ==> need to entry a new password for it (remember it).
-
-   - Root Pass:  ==> nothing there. 
+    - Server Host ==> db  (this is relate to link container _some-mysql:db_)
+    - Database Name ==> openemr
+    - Login Name ==> openemruser
+    - PASSWORD ==> opendbpasswd or the one you are using when database was create ...
+    - ........
+    - Root Pass:  ==> nothing there. 
+    - User Hostname ==> localhost
+    - .......
  
   OPENEMR USER:
 
    - Initial User Password: need to entry a new passowrd for admin user(remember it needed to log in).
-
-   - Press continue.
+   - Press _continue_.
 
 - Open EMR Setup step 3 to 6 : press continue.
 
-- Open EMR Setup step congratualtion page : press continue.
+- Open EMR Setup step congratualtion page : press _continue_.
 
 After the web installation need to run this command to increase security :
 

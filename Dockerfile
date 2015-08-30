@@ -1,12 +1,11 @@
 #name of container: docker-openemr
-#versison of container: 0.1.1
+#versison of container: 0.1.2
 FROM angelrr7702/docker-baseimage
 MAINTAINER Angel Rodriguez "angel@quantumobject.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
 RUN apt-get update && apt-get install -y -q apache2 \
-                                            mysql-server \
                                             php5 \
                                             apache2-mpm-prefork \
                                             libapache2-mod-php5 \
@@ -43,12 +42,6 @@ COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
 ##Adding Deamons to containers
-
-# to add mysqld deamon to runit
-RUN mkdir /etc/service/mysqld
-COPY mysqld.sh /etc/service/mysqld/run
-RUN chmod +x /etc/service/mysqld/run
-
 # to add apache2 deamon to runit
 RUN mkdir /etc/service/apache2
 COPY apache2.sh /etc/service/apache2/run
@@ -62,7 +55,6 @@ RUN chmod +x /sbin/pre-conf \
 && /bin/bash -c /sbin/pre-conf \
 && rm /sbin/pre-conf
 
-#down/shutdown script ... use to be run in container before stop or shutdown .to keep service..good status..and maybe
 #backup or keep data integrity ..
 ##scritp that can be running from the outside using docker exec tool ...
 COPY backup.sh /sbin/backup
