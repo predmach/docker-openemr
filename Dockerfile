@@ -7,7 +7,6 @@ MAINTAINER Angel Rodriguez "angel@quantumobject.com"
 #Installation of nesesary package/software for this containers...
 RUN apt-get update && apt-get install -y -q apache2 \
                                             php5 \
-                                            apache2-mpm-prefork \
                                             libapache2-mod-php5 \
                                             libdate-calc-perl \
                                             libdbd-mysql-perl \
