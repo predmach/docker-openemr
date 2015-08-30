@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y -q apache2 \
                                             libdate-calc-perl \
                                             libdbd-mysql-perl \
                                             libhtml-parser-perl \
-                                            libtiff-tools \
+                                            libdbi-perl \
                                             libwww-mechanize-perl \
                                             libxml-parser-perl \
                                             libtiff-tools \
