@@ -1,6 +1,6 @@
 #name of container: docker-openemr
-#versison of container: 0.1.2
-FROM quantumobject/docker-baseimage
+#versison of container: 0.2.1
+FROM quantumobject/docker-baseimage:15.04
 MAINTAINER Angel Rodriguez "angel@quantumobject.com"
 
 #add repository and update the container
