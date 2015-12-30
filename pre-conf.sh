@@ -6,6 +6,7 @@ wget https://github.com/openemr/openemr/archive/master.tar.gz
 tar -pxvzf master.tar.gz
 rm master.tar.gz
 mv openemr-master /var/www/openemr
+chown -R www-data:www-data /var/www/openemr
 
 #remove the basic page for apache
 rm -R /var/www/html
