@@ -1,6 +1,6 @@
 # docker-openemr
 
-Docker container for [OpenEMR 4.2.0][3]
+Docker container for [OpenEMR 4.2.1][3]
 
 "OpenEMR is a Free and Open Source electronic health records and medical practice management application that can run on Windows, Linux, Mac OS X, and many other platforms. OpenEMR is ONC certified and is one of the most popular open source electronic medical records in use today. OpenEMR is [supported][6] by a strong community of volunteers and [professionals][7] all with the common goal of making OpenEMR a superior alternative to its proprietary counterparts. The OpenEMR community is dedicated to guarding OpenEMR's status as a free, open source software solution for medical practices and is dedicated to maintaining a spirit of openness, kindness and cooperation."
 
@@ -25,15 +25,15 @@ Or you can used pre-existing mysql database but you need to have mysql root pass
 
 Them create, run and link to the OpenEMR container:
 
-    $ docker run -d -p 443 --link some-mysql:db quantumobject/docker-openemr
+    $ docker run -d -p 80 --link some-mysql:db quantumobject/docker-openemr
 
 where when been ask for database need to replace localhost for db.
 
 ## Web install procedure :
 
-Check with your browser to the assigned xxxx port by docker or you for port 443 to  continue web installation.
+Check with your browser to the assigned xxxx port by docker or you to continue web installation.
 
-  - **https://host_ip:port/**
+  - **https://host_ip/**
 
 Where you need to fallow this steps :
 
@@ -66,6 +66,10 @@ Where you need to fallow this steps :
 After the web installation need to run this command to increase security :
 
     $ docker exec -it container_id after_install
+
+note: deploy this container behind proxy with SSL support like :
+https://github.com/jwilder/nginx-proxy
+https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
 
 ## More Info
 
