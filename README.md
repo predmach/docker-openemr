@@ -68,6 +68,7 @@ After the web installation need to run this command to increase security :
     $ docker exec -it container_id after_install
 
 note: deploy this container behind proxy with SSL support like :
+
 https://github.com/jwilder/nginx-proxy
 https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
 
