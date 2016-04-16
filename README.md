@@ -70,6 +70,7 @@ After the web installation need to run this command to increase security :
 note: deploy this container behind proxy with SSL support like :
 
 https://github.com/jwilder/nginx-proxy
+
 https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
 
 ## More Info
