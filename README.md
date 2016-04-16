@@ -81,7 +81,7 @@ To help improve this container [quantumobject/docker-openemr][5]
 
 Example of [OpenEMR][8]
 
-For additional info about us and our projects check our site [www.quantumobject.com][9]
+For additional info about us and our projects check our site [www.quantumobject.org][9]
 
 [1]:http://open-emr.org/
 [2]:https://www.docker.com
@@ -90,5 +90,5 @@ For additional info about us and our projects check our site [www.quantumobject.
 [5]:https://github.com/QuantumObject/docker-openemr
 [6]:http://open-emr.org/wiki/index.php/OpenEMR_Support_Guide
 [7]:http://open-emr.org/wiki/index.php/OpenEMR_Professional_Support
-[8]:https://www.quantumobject.com:49163/
-[9]:http://www.quantumobject.com/
+[8]:https://openemr.quantumobject.com/
+[9]:https://www.quantumobject.org/
