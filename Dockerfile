@@ -40,17 +40,20 @@ RUN mkdir -p /etc/my_init.d
 COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
-##Adding Deamons to containers
 # to add apache2 deamon to runit
-RUN mkdir /etc/service/apache2
+RUN mkdir -p /etc/service/apache2  /var/log/apache2 ; sync 
+RUN mkdir /etc/service/apache2/log
 COPY apache2.sh /etc/service/apache2/run
-RUN chmod +x /etc/service/apache2/run
+COPY apache2-log.sh /etc/service/apache2/log/run
+RUN chmod +x /etc/service/apache2/run /etc/service/apache2/log/run \
+    && cp /var/log/cron/config /var/log/apache2/ \
+    && chown -R www-data /var/log/apache2
 
 #pre-config scritp for different service that need to be run when container image is create
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
 
 COPY pre-conf.sh /sbin/pre-conf
-RUN chmod +x /sbin/pre-conf \
+RUN chmod +x /sbin/pre-conf ; sync  \
 && /bin/bash -c /sbin/pre-conf \
 && rm /sbin/pre-conf
 
@@ -66,7 +69,7 @@ VOLUME /var/backups
 COPY after_install.sh /sbin/after_install
 RUN chmod +x /sbin/after_install
 
-EXPOSE 443
+EXPOSE 80
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]

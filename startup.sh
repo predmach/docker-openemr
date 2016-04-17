@@ -6,9 +6,7 @@ if [ -f /etc/configured ]; then
   echo 'already configured'
 else
   #code that need to run only one time ....
-   a2enmod ssl
-   a2ensite default-ssl
-   a2enmod rewrite
+  a2enmod rewrite
    
    chown -R www-data:www-data /var/www/openemr/gacl/admin/templates_c
    chown -R www-data:www-data /var/www/openemr/sites/default/edi
