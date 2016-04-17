@@ -53,7 +53,7 @@ RUN chmod +x /etc/service/apache2/run /etc/service/apache2/log/run \
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
 
 COPY pre-conf.sh /sbin/pre-conf
-RUN chmod +x /sbin/pre-conf \
+RUN chmod +x /sbin/pre-conf ; sync  \
 && /bin/bash -c /sbin/pre-conf \
 && rm /sbin/pre-conf
 
