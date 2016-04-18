@@ -1,11 +1,9 @@
 #!/bin/bash
 
-#downloading software openemr
-#wget http://sourceforge.net/projects/openemr/files/OpenEMR%20Current/4.2.0.3/openemr-4.2.0.tar.gz
-wget https://github.com/openemr/openemr/archive/master.tar.gz
-tar -pxvzf master.tar.gz
-rm master.tar.gz
-mv openemr-master /var/www/openemr
+wget https://github.com/openemr/openemr/archive/v4_2_1.tar.gz
+tar -pxvzf v4_2_1.tar.gz
+rm v4_2_1.tar.gz
+mv openemr-4_2_1 /var/www/openemr
 chown -R www-data:www-data /var/www/openemr
 
 #remove the basic page for apache
