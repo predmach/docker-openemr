@@ -19,7 +19,9 @@ To install docker in Ubuntu 15.04 use the commands:
 
 If you need a MySQL database you can link container :
 
-    $ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
+    $ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql:5.6
+    
+note: using version 5.6 of mysql because openemr have some problem with newer version of mysql.
     
 Or you can used pre-existing mysql database but you need to have mysql root password for it.
 
