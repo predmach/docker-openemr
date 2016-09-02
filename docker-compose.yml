@@ -1,0 +1,21 @@
+version : '2'
+services:
+  web:
+    image: predmach/open-emr
+    ports:
+      - "80:80"
+    links:
+      - db
+    environment:
+        DB_PORT_3306_TCP_ADDR: db  #To pass Env Variable (hostname)
+  db:
+    image: predmach/mysql-emr  #MySql Image with Preloaded EMR Data
+    ports:
+      - "3306:3306"
+    environment:
+          MYSQL_ROOT_PASSWORD: root     #kept here for user input if need to change
+          #MYSQL_USER: root
+          #MYSQL_DATABASE: openemr      #Already passed ENV params with mysql-emr image
+
+    #volumes:
+      #- ./database/db-dump:/docker-entrypoint-initdb.d

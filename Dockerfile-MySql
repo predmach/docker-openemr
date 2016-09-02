@@ -1,0 +1,3 @@
+FROM mysql:latest
+COPY database/db-dump/*.sql /docker-entrypoint-initdb.d/
+ENV MYSQL_DATABASE=openemr
