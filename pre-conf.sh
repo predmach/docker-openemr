@@ -1,9 +1,13 @@
 #!/bin/bash
 
-wget https://github.com/openemr/openemr/archive/v4_2_1.tar.gz
-tar -pxvzf v4_2_1.tar.gz
-rm v4_2_1.tar.gz
-mv openemr-4_2_1 /var/www/openemr
+#wget https://github.com/openemr/openemr/archive/v4_2_1.tar.gz
+#tar -pxvzf v4_2_1.tar.gz
+#rm v4_2_1.tar.gz
+#mv openemr-4_2_1 /var/www/openemr
+wget https://github.com/predmach/openemr/archive/master.tar.gz
+tar -pxvzf master.tar.gz
+rm master.tar.gz
+mv openemr-master /var/www/openemr
 chown -R www-data:www-data /var/www/openemr
 
 #remove the basic page for apache

@@ -17,12 +17,20 @@ To install docker in Ubuntu 15.04 use the commands:
 
 ## Usage
 
+#Build Image From Latest Code and Push to Repositorty
+sh buildImages.sh
+docker push <user>/open-emr
+docker push <user>/mysql-emr
+
+#Run EMR Container in single go. It will download EMR image and MySQl image
+docker-compose up
+
 If you need a MySQL database you can link container :
 
     $ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql:5.6
-    
+
 note: using version 5.6 of mysql because openemr have some problem with newer version of mysql.
-    
+
 Or you can used pre-existing mysql database but you need to have mysql root password for it.
 
 Them create, run and link to the OpenEMR container:
@@ -43,9 +51,9 @@ Where you need to fallow this steps :
 
   - Open EMR Setup step 1 : option suppose to be "Have setup create the database" and press _continue_.
 
-  - Open EMR Setup step 2 : 
+  - Open EMR Setup step 2 :
 
-   MYSQL SERVER: 
+   MYSQL SERVER:
     - Server Host ==> db  (this is relate to link container _some-mysql:db_)
     - Server Port ==> 3306 (stay the same)
     - Database Name ==> openemr (stay the same)
@@ -55,7 +63,7 @@ Where you need to fallow this steps :
     - Root Pass:  ==> xxxxxx (root password for your mysql database ; the same when you created the mysql container)
     - User Hostname ==> %  (this normally no recomended but the mysql container will be internally linked with openemr container)
     - UTF-8 Collation ==> General (stay the same)
- 
+
   OPENEMR USER:
 
    - Initial User Password: need to entry a new password for admin user(remember it needed to log in).
